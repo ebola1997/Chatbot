@@ -1,0 +1,8 @@
+pypdf
+langchain
+langchain-community
+ollama
+PyPDF2 
+python-docx
+streamlit
+

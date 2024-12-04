@@ -1,0 +1,44 @@
+1. question: Kenapa saya tidak bisa connect ke WiFi A?
+answer: Pastikan perangkat Anda berada dalam jangkauan WiFi, WiFi A sudah aktif, dan passwordnya benar. Jika masih bermasalah, coba forget network lalu sambungkan ulang.
+
+2. question: Bagaimana cara memecahkan masalah WiFi yang tidak terhubung?
+answer: Periksa status router, restart perangkat Anda, dan pastikan mode pesawat tidak aktif. Jika menggunakan proxy atau VPN, nonaktifkan sementara.
+
+3. question: Apa langkah pertama untuk memeriksa koneksi WiFi?
+answer: Cek apakah WiFi A terlihat di daftar jaringan dan pastikan tidak ada masalah sinyal.
+
+4. question: Bagaimana cara reset password email perusahaan?
+answer: Masuk ke portal email perusahaan, pilih opsi 'Lupa Password', dan ikuti instruksi untuk reset. Jika ada kesulitan, hubungi admin IT.
+
+5. question: Saya lupa password email kantor. Apa yang harus dilakukan?
+answer: Klik 'Forgot Password' di halaman login email, atau hubungi IT Support untuk bantuan manual.
+
+6. question: Apa yang harus dilakukan jika tidak bisa login email karena lupa password?
+answer: Coba gunakan fitur pemulihan password di halaman login. Pastikan akses ke email alternatif untuk menerima tautan reset.
+
+7. question: Bagaimana cara mengaktifkan VPN di laptop kantor?
+answer: Buka aplikasi VPN yang sudah terinstall, masukkan credential yang diberikan IT, lalu tekan tombol 'Connect'.
+
+8. question: Cara menghubungkan ke VPN kantor bagaimana?
+answer: Pastikan aplikasi VPN diinstal, gunakan server dan login yang diberikan oleh IT Support. Klik 'Connect' setelah pengaturan selesai.
+
+9. question: VPN tidak bisa terhubung, apa yang harus saya cek?
+answer: Pastikan koneksi internet stabil, credential VPN benar, dan aplikasi VPN diperbarui ke versi terbaru.
+
+10. question: Bagaimana cara menggunakan printer bersama di kantor?
+answer: Tambahkan printer melalui Settings > Devices > Printers & Scanners, lalu pilih printer jaringan kantor.
+
+11. question: Saya ingin mencetak dokumen, bagaimana cara setting printer?
+answer: Pastikan Anda terhubung ke jaringan yang sama dengan printer. Buka 'Add Printer' di pengaturan dan pilih printer yang sesuai.
+
+12. question: Printer kantor tidak terdeteksi, apa langkah pertama?
+answer: Pastikan printer menyala dan terhubung ke jaringan. Restart printer jika perlu.
+
+13. question: Apa langkah mengajukan pengadaan laptop baru?
+answer: Ajukan permintaan melalui email resmi ke IT Support, sertakan alasan dan spesifikasi yang dibutuhkan.
+
+14. question: Bagaimana prosedur untuk membeli laptop baru melalui departemen IT?
+answer: Isi formulir pengadaan barang dan ajukan ke kepala departemen untuk disetujui sebelum diteruskan ke tim IT.
+
+15. question: Pengadaan perangkat baru butuh proses apa saja?
+answer: Kirim permintaan resmi ke IT dengan justifikasi kebutuhan. Tunggu persetujuan dari manajemen sebelum proses pembelian dimulai.

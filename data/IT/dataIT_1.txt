@@ -1,0 +1,39 @@
+question: Network saya ga bisa connect ke wifi A
+answer: Ada beberapa langkah yang bisa dicoba:
+1. Pastikan password wifi sudah dimasukkan dengan benar.
+2. Periksa apakah perangkat Anda mendukung frekuensi wifi (2.4GHz atau 5GHz).
+3. Restart perangkat Anda dan router wifi.
+4. Hubungi tim IT untuk memverifikasi konfigurasi jaringan atau reset router jika masalah berlanjut.
+
+question: Bagaimana cara reset password email?
+answer: Untuk mereset password email:
+1. Buka halaman login email Anda.
+2. Klik pada opsi 'Lupa Password'.
+3. Ikuti instruksi untuk memverifikasi identitas Anda (biasanya melalui email cadangan atau SMS).
+4. Buat password baru dan simpan.
+5. Jika mengalami kesulitan, hubungi tim IT untuk bantuan lebih lanjut.
+
+question: Bagaimana cara mengaktifkan VPN?
+answer: Untuk mengaktifkan VPN:
+1. Pastikan Anda memiliki aplikasi atau perangkat lunak VPN yang sudah diinstal.
+2. Masukkan kredensial yang diberikan oleh tim IT (username dan password).
+3. Pilih server yang akan digunakan dan klik 'Connect'.
+4. Tunggu hingga koneksi berhasil terhubung.
+5. Jika ada masalah, silakan hubungi tim IT.
+
+question: Bagaimana cara menggunakan printer?
+answer: Berikut langkah-langkah untuk menggunakan printer:
+1. Pastikan printer terhubung ke jaringan atau perangkat Anda.
+2. Instal driver printer (jika belum terinstal).
+3. Pilih file yang ingin dicetak dan tekan 'Ctrl+P' atau gunakan menu cetak.
+4. Pilih printer yang sesuai dan atur preferensi cetak (warna, jumlah halaman, dll).
+5. Klik 'Print'.
+6. Jika mengalami kesulitan, hubungi tim IT untuk bantuan.
+
+question: Bagaimana cara mengajukan pengadaan laptop baru?
+answer: Untuk mengajukan pengadaan laptop baru:
+1. Siapkan justifikasi kebutuhan laptop baru (misalnya untuk pekerjaan tertentu).
+2. Lengkapi formulir pengajuan pengadaan yang disediakan oleh departemen IT.
+3. Dapatkan persetujuan dari atasan langsung.
+4. Kirimkan pengajuan ke departemen IT untuk diproses.
+5. Tim IT akan melakukan evaluasi kebutuhan dan mengatur pembelian jika disetujui.

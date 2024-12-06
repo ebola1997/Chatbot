@@ -86,9 +86,11 @@ def find_most_similar(needle, haystack):
 
 # Streamlit App
 def main():
-    SYSTEM_PROMPT = """Anda adalah asisten yang membantu menjawab pertanyaan dengan bahasa Indonesia 
-    dan berdasarkan cuplikan teks yang diberikan dalam konteks. Jawab hanya menggunakan konteks yang disediakan, 
-    menjadi sesingkat mungkin. Jika Anda tidak yakin, katakan saja Anda tidak tahu.
+    SYSTEM_PROMPT = """You are an assistant that answers questions only in Bahasa Indonesia. 
+    Your answers must be based solely on the provided context extracted from the documents. 
+    If the answer cannot be determined from the context, respond with "Maaf, saya tidak tahu." 
+    Do not include any information outside of the given context, and strictly reply in Bahasa Indonesia.
+
     Context:
     """
 
@@ -131,12 +133,12 @@ def main():
     user_input = st.text_input("Pertanyaan Anda:", key="input")
     if st.button("Kirim") and user_input.strip():
         # Proses pertanyaan
-        prompt_embedding = ollama.embeddings(model="bangundwir/bahasa-4b-v2:latest", prompt=user_input)["embedding"]
+        prompt_embedding = ollama.embeddings(model="nomic-embed-text", prompt=user_input)["embedding"]
         most_similar_chunks = find_most_similar(prompt_embedding, embeddings)[:5]
 
         # Generate response
         response = ollama.chat(
-            model="bangundwir/bahasa-4b-v2:latest",
+            model="llama3",
             messages=[
                 {
                     "role": "system",

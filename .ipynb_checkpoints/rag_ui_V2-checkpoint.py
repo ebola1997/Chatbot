@@ -93,7 +93,7 @@ def main():
     """
 
     # Load subfolders in the `data` directory
-    data_root = "data/"
+    data_root = "data"
     subfolders = [f for f in os.listdir(data_root) if os.path.isdir(os.path.join(data_root, f))]
 
     # Streamlit select box to choose the folder
@@ -111,13 +111,7 @@ def main():
             all_paragraphs.extend(paragraphs)
             filenames.append(file)
 
-
-    folder_name = os.path.basename(data_folder)
-
-    # Buat nama file embeddings berdasarkan nama folder
-    embeddings_filename = f"data_embeddings_{folder_name}"
-    # Buat embedding
-    embeddings = get_embeddings(embeddings_filename, "nomic-embed-text", all_paragraphs)
+    embeddings = get_embeddings(f"{selected_folder}_embeddings", "bangundwir/bahasa-4b-v2:latest", all_paragraphs)
 
     # Streamlit UI
     st.title("Chatbot dengan RAG (Retrieval-Augmented Generation)")

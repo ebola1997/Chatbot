@@ -36,6 +36,14 @@ def read_csv(filename):
         text += " ".join(str(value) for value in row.values) + "\n"
     return text
 
+# Membaca file Excel (.xlsx)
+def read_xlsx(filename):
+    df = pd.read_excel(filename)
+    text = ""
+    for index, row in df.iterrows():
+        text += " ".join(str(value) for value in row.values) + "\n"
+    return text
+
 # Mendapatkan paragraf dari semua file
 def parse_file(filename):
     if filename.endswith(".txt"):
@@ -46,6 +54,8 @@ def parse_file(filename):
         content = read_docx(filename)
     elif filename.endswith(".csv"):
         content = read_csv(filename)
+    elif filename.endswith(".xlsx"):  # Menambahkan pengecekan untuk file Excel
+        content = read_xlsx(filename)
     else:
         raise ValueError(f"Unsupported file type: {filename}")
     
@@ -119,7 +129,7 @@ def main():
 
     for file in os.listdir(data_folder):
         file_path = os.path.join(data_folder, file)
-        if file.lower().endswith((".txt", ".pdf", ".docx", ".csv")):  # Menambahkan pengecekan file CSV
+        if file.lower().endswith((".txt", ".pdf", ".docx", ".csv", ".xlsx")):  # Menambahkan pengecekan file Excel
             paragraphs = parse_file(file_path)
             all_paragraphs.extend(paragraphs)
             filenames.append(file)

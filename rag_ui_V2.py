@@ -5,6 +5,7 @@ import numpy as np
 from numpy.linalg import norm
 import PyPDF2
 from docx import Document
+import pandas as pd
 import streamlit as st
 
 # Membaca file TXT
@@ -27,6 +28,14 @@ def read_docx(filename):
     text = "\n".join(paragraph.text for paragraph in doc.paragraphs)
     return text
 
+# Membaca file CSV
+def read_csv(filename):
+    df = pd.read_csv(filename)
+    text = ""
+    for index, row in df.iterrows():
+        text += " ".join(str(value) for value in row.values) + "\n"
+    return text
+
 # Mendapatkan paragraf dari semua file
 def parse_file(filename):
     if filename.endswith(".txt"):
@@ -35,6 +44,8 @@ def parse_file(filename):
         content = read_pdf(filename)
     elif filename.endswith(".docx"):
         content = read_docx(filename)
+    elif filename.endswith(".csv"):
+        content = read_csv(filename)
     else:
         raise ValueError(f"Unsupported file type: {filename}")
     
@@ -86,14 +97,16 @@ def find_most_similar(needle, haystack):
 
 # Streamlit App
 def main():
-    SYSTEM_PROMPT = """Anda adalah asisten yang membantu menjawab pertanyaan dengan bahasa Indonesia 
-    dan berdasarkan cuplikan teks yang diberikan dalam konteks. Jawab hanya menggunakan konteks yang disediakan, 
-    menjadi sesingkat mungkin. Jika Anda tidak yakin, katakan saja Anda tidak tahu.
+    SYSTEM_PROMPT = """You are an assistant that answers questions only in Bahasa Indonesia. 
+    Your answers must be based solely on the provided context extracted from the documents. 
+    If the answer cannot be determined from the context, respond with "Maaf, saya tidak tahu." 
+    Do not include any information outside of the given context, and strictly reply in Bahasa Indonesia.
+
     Context:
     """
 
     # Load subfolders in the `data` directory
-    data_root = "data"
+    data_root = "data/"
     subfolders = [f for f in os.listdir(data_root) if os.path.isdir(os.path.join(data_root, f))]
 
     # Streamlit select box to choose the folder
@@ -106,12 +119,17 @@ def main():
 
     for file in os.listdir(data_folder):
         file_path = os.path.join(data_folder, file)
-        if file.lower().endswith((".txt", ".pdf", ".docx")):
+        if file.lower().endswith((".txt", ".pdf", ".docx", ".csv")):  # Menambahkan pengecekan file CSV
             paragraphs = parse_file(file_path)
             all_paragraphs.extend(paragraphs)
             filenames.append(file)
 
-    embeddings = get_embeddings(f"{selected_folder}_embeddings", "bangundwir/bahasa-4b-v2:latest", all_paragraphs)
+    folder_name = os.path.basename(data_folder)
+
+    # Buat nama file embeddings berdasarkan nama folder
+    embeddings_filename = f"data_embeddings_{folder_name}"
+    # Buat embedding
+    embeddings = get_embeddings(embeddings_filename, "nomic-embed-text", all_paragraphs)
 
     # Streamlit UI
     st.title("Chatbot dengan RAG (Retrieval-Augmented Generation)")
@@ -125,12 +143,12 @@ def main():
     user_input = st.text_input("Pertanyaan Anda:", key="input")
     if st.button("Kirim") and user_input.strip():
         # Proses pertanyaan
-        prompt_embedding = ollama.embeddings(model="bangundwir/bahasa-4b-v2:latest", prompt=user_input)["embedding"]
+        prompt_embedding = ollama.embeddings(model="nomic-embed-text", prompt=user_input)["embedding"]
         most_similar_chunks = find_most_similar(prompt_embedding, embeddings)[:5]
 
         # Generate response
         response = ollama.chat(
-            model="bangundwir/bahasa-4b-v2:latest",
+            model="llama3",
             messages=[
                 {
                     "role": "system",

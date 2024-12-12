@@ -1,0 +1,53 @@
+Data karyawan CorpInc 
+dibawah adalah data status karyawan dalam format csv dengan separated ;
+Nama;Gaji;Jabatan
+1. Elizabeth Kennedy;7943421;Asisten Manajer
+2. Marc Hanson;9193541;Direktur
+3. Deborah Hernandez;5196982;Staf
+4. Gina Lucas;10131635;Supervisor
+5. Kelly Campbell;8605359;Supervisor
+6. Adrian Lopez;7787258;Karyawan
+7. Amy Ruiz;11327484;Staf
+8. Raven Silva;11459933;Karyawan
+9. Kevin Bolton;9522376;Direktur
+10. Daniel Baker;14204547;Karyawan
+11. Richard Hale;10554781;Manajer
+12. Gregory Rosario;6778187;Karyawan
+13. William Garrett;11837835;Manajer
+14. Margaret Rose;12068060;Staf
+15. Michael Thompson;11860798;Supervisor
+16. Stephanie Cameron;10492098;Karyawan
+17. John Cameron;14234057;Staf
+18. Sarah Bolton;14225936;Staf
+19. James Goodman;7417945;Direktur
+20. Christopher Ewing;9006001;Asisten Manajer
+21. Molly Thompson;10094063;Staf
+22. Courtney Powell;9690943;Manajer
+23. Gabrielle Thomas;7941030;Direktur
+24. Melissa Moran;7575458;Manajer
+25. Mary Harris;14476505;Direktur
+26. Christina Friedman;13943109;Direktur
+27. Ronald Hawkins;8716015;Karyawan
+28. Misty Hatfield;13496747;Asisten Manajer
+29. Russell Cook;12024642;Staf
+30. Jesse Bates;9015706;Direktur
+31. Laura Fox;11271579;Manajer
+32. Kimberly Thornton;6397215;Staf
+33. Holly Pham;5344975;Staf
+34. Tiffany Miller;9962764;Direktur
+35. Stacy Burton;7564591;Karyawan
+36. Mark Lane;6889775;Direktur
+37. Gary Warren;8249192;Manajer
+38. Guy Durham;11074483;Manajer
+39. Danny Ross;6391870;Supervisor
+40. Suzanne Molina;13153305;Manajer
+41. Sharon Torres;10883690;Direktur
+42. Larry Garcia;12078665;Staf
+43. Mrs. Bonnie Burke;5826818;Karyawan
+44. Nancy Gonzales;10644598;Direktur
+45. Tamara Powell;12262347;Manajer
+46. Amanda Freeman;9496250;Supervisor
+47. Amy Rocha;9667160;Manajer
+48. Patrick Smith;5232783;Direktur
+49. Annette Moore;10556807;Supervisor
+50. Richard Avila;9641496;Staf

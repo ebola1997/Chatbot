@@ -29,11 +29,20 @@ def read_docx(filename):
     return text
 
 # Membaca file CSV
+# Membaca file CSV tanpa header dan mengisi NaN
 def read_csv(filename):
-    df = pd.read_csv(filename)
+    df = pd.read_csv(filename, header=None, delimiter=';', skip_blank_lines=True)
+    df = df.fillna("0")  # Replace NaN with "0"
     text = ""
-    for index, row in df.iterrows():
-        text += " ".join(str(value) for value in row.values) + "\n"
+    
+    # Loop through the rows
+    for idx, row in df.iterrows():
+        if idx >= 1:  # Ensure that idx is an integer
+            text += f"'{idx}. " + ", ".join(str(value) for value in row.values) + "\n"
+        else:
+            # If it's the first row (header row), don't add an index number
+            text += "Ini adalah data csv dengan delimter (,)\n" + ", ".join(str(value) for value in row.values) + "\n"
+    
     return text
 
 # Membaca file Excel (.xlsx)
@@ -129,10 +138,11 @@ def main():
 
     for file in os.listdir(data_folder):
         file_path = os.path.join(data_folder, file)
-        if file.lower().endswith((".txt", ".pdf", ".docx", ".csv", ".xlsx")):  # Menambahkan pengecekan file Excel
+        if file.lower().endswith((".txt", ".pdf", ".docx", ".csv")):
             paragraphs = parse_file(file_path)
             all_paragraphs.extend(paragraphs)
             filenames.append(file)
+
 
     folder_name = os.path.basename(data_folder)
 
@@ -181,3 +191,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
